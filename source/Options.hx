@@ -95,9 +95,11 @@ class DFJKOption extends Option
 		return "Key Bindings";
 	}
 }
-
+class AndroidControls extends Option
 class CpuStrums extends Option
 {
+
+        public function new()
 	public function new(desc:String)
 	{
 		super();
@@ -106,6 +108,18 @@ class CpuStrums extends Option
 
 	public override function press():Bool
 	{
+
+               trace("switch");
+               FlxG.switchState(new android.AndroidControlsMenu());
+               return false;
+        }
+
+        private override function updateDisplay():String
+        {
+
+                return "Android Controls";
+        }
+}
 		FlxG.save.data.cpuStrums = !FlxG.save.data.cpuStrums;
 		
 		display = updateDisplay();
