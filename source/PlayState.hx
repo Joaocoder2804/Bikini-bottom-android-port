@@ -2693,6 +2693,9 @@ class PlayState extends MusicBeatState
 		canPause = false;
 		FlxG.sound.music.volume = 0;
 		vocals.volume = 0;
+        #if android
+        androidc.visible = false;
+        #end
 		FlxG.sound.music.pause();
 		vocals.pause();
 		if (SONG.validScore)
@@ -2756,7 +2759,7 @@ class PlayState extends MusicBeatState
 
 					if (SONG.validScore)
 					{
-						NGio.unlockMedal(60961);
+						
 						Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 					}
 
