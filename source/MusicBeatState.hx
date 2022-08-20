@@ -30,11 +30,11 @@ class MusicBeatState extends FlxUIState
 	inline function get_controls():Controls
 		return PlayerSettings.player1.controls;
 
-                               #if android
-	                       var _virtualpad:FlxVirtualPad;
-	                       var androidc:AndroidControls;
-	                       var trackedinputs:Array<FlxActionInput> = [];
-	                       #end
+  #if android
+	var _virtualpad:FlxVirtualPad;
+	var androidc:AndroidControls;
+	var trackedinputs:Array<FlxActionInput> = [];
+	#end
 
 	#if android
 	public function addVirtualPad(?DPad:FlxDPadMode, ?Action:FlxActionMode) {
@@ -49,7 +49,7 @@ class MusicBeatState extends FlxUIState
 
 	#if android
 	public function addAndroidControls() {
-                androidc = new AndroidControls();
+  androidc = new AndroidControls();
 
 		switch (androidc.mode)
 		{
@@ -92,12 +92,10 @@ class MusicBeatState extends FlxUIState
 
 		super.destroy();
 	}
-	
-        override function create();
 
+	override function create()
 	{
-		
-                (cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
+		(cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
 
 		if (transIn != null)
 			trace('reg ' + transIn.region);
