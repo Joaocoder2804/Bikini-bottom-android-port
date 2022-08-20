@@ -92,7 +92,8 @@ class MusicBeatState extends FlxUIState
 
 		super.destroy();
 	}
-	override function create();
+	
+        override function create();
 
 	{
 		(cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
