@@ -3,11 +3,9 @@ package;
 #if sys
 import smTools.SMFile;
 #end
-#if windows
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
-#end
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
 import flixel.addons.transition.FlxTransitionableState;
